@@ -1,4 +1,4 @@
-TARGET_EXEC := final_program
+TARGET_EXEC := %final_program%
 
 SRC_DIRS := ./src
 INC_DIRS := ./include
