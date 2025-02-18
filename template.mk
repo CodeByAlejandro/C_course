@@ -4,6 +4,9 @@ SRC_DIRS := ./src
 INC_DIRS := ./include
 BUILD_DIR := ./build
 
+# Check if build directory already exists (needed for 'clean' target)
+BUILD_DIR_EXISTS := $(shell [ -d $(BUILD_DIR) ] && echo 1 || echo 0)
+
 # Find all the C/C++ and assembly files we want to compile
 # Note the single quotes around the * expressions. The shell will incorrectly expand these otherwise, but we want to send the * directly to the find command.
 SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c' -or -name '*.s')
@@ -48,8 +51,6 @@ build: $(BUILD_DIR)/$(TARGET_EXEC)
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 ifdef SRCS
 	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
-else
-	$(info [INFO] No sources found)
 endif
 
 # Build step for C source
@@ -62,9 +63,12 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 	mkdir -p $(dir $@)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
+# Clean rule to delete previous build
 .PHONY: clean
 clean:
+ifeq ($(BUILD_DIR_EXISTS),1)
 	rm -r $(BUILD_DIR)
+endif
 
 # Include the .d Makefiles. The - at the front suppresses the errors of missing
 # Makefiles. Initially, all the .d files will be missing, and we don't want those
