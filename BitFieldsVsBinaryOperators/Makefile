@@ -3,9 +3,13 @@ TARGET_EXEC := BitFieldsVsBinaryOperators
 SRC_DIRS := ./src
 INC_DIRS := ./include
 BUILD_DIR := ./build
+BIN_DIR := ./bin
 
-# Check if build directory already exists (needed for 'clean' target)
+# Check if build directory exists (needed for 'clean' target)
 BUILD_DIR_EXISTS := $(shell [ -d $(BUILD_DIR) ] && echo 1 || echo 0)
+
+# Check if bin directory exists (needed for 'clean' target)
+BIN_DIR_EXISTS := $(shell [ -d $(BIN_DIR) ] && echo 1 || echo 0)
 
 # Find all the C/C++ and assembly files we want to compile
 # Note the single quotes around the * expressions. The shell will incorrectly expand these otherwise, but we want to send the * directly to the find command.
@@ -43,9 +47,14 @@ endif
 # Set C++ flags to same as C flags
 CXXFLAGS := $(CFLAGS)
 
-# Map default 'build' target to build final executable
+# Map default 'build' target to build final executable and symlink it to bin directory
 .PHONY: build
-build: $(BUILD_DIR)/$(TARGET_EXEC)
+build: $(BIN_DIR)/$(TARGET_EXEC)
+
+# The symlink step to expose the binary via the bin directory
+$(BIN_DIR)/$(TARGET_EXEC): $(BUILD_DIR)/$(TARGET_EXEC)
+	mkdir -p $(BIN_DIR)
+	ln -sf $(addprefix ../,$(BUILD_DIR)/$(TARGET_EXEC)) $(BIN_DIR)
 
 # The final build step
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
@@ -68,6 +77,9 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 clean:
 ifeq ($(BUILD_DIR_EXISTS),1)
 	rm -r $(BUILD_DIR)
+endif
+ifeq ($(BIN_DIR_EXISTS),1)
+	rm -r $(BIN_DIR)
 endif
 
 # Include the .d Makefiles. The - at the front suppresses the errors of missing
