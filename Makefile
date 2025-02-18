@@ -11,12 +11,14 @@ else
 endif
 
 define clean-template
-$(MAKE) -C $(PRJ) clean
+-$(MAKE) -C $(PRJ) clean
+@echo
+
 endef
 
 clean:
 ifdef PROJECT
 	$(MAKE) -C $(PROJECT) clean
 else
-	$(foreach PRJ,$(PROJECTS),$(clean-template);)
+	$(foreach PRJ,$(PROJECTS),$(clean-template))
 endif
