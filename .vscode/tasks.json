@@ -32,7 +32,6 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true
             },
             "detail": "Custom task to build C/C++ project (optimized)."
         }
