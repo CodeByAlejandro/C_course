@@ -1,0 +1,7 @@
+# Project build files
+bin/
+build/
+
+# VS Code launch symlinks
+.vscode/launch_project
+.vscode/launch_binary

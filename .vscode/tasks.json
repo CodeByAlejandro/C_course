@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "GNU make: build active project (debug mode)",
+            "command": "${workspaceFolder}/vscode_build_script.sh",
+            "args": [
+                "${workspaceFolder}",
+                "${file}",
+                "DEBUG=1"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Custom task to build C/C++ project (debug)."
+        },
+        {
+            "type": "shell",
+            "label": "GNU make: build active project",
+            "command": "${workspaceFolder}/vscode_build_script.sh",
+            "args": [
+                "${workspaceFolder}",
+                "${file}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Custom task to build C/C++ project (optimized)."
+        }
+    ]
+}
