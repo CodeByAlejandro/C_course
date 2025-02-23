@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "GNU make: Build active project (debug mode)"
+            "preLaunchTask": "GNU make: Build project (debug mode)"
         }
     ]
 }

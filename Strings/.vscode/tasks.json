@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "GNU make: Build active project (debug mode)",
+            "label": "GNU make: Build project (debug mode)",
             "type": "shell",
             "command": "make",
             "args": [
@@ -18,7 +18,7 @@
             "detail": "Custom task to build C/C++ project with debug flags."
         },
         {
-            "label": "GNU make: Build active project (optimization mode)",
+            "label": "GNU make: Build project (optimization mode)",
             "type": "shell",
             "command": "make",
             "args": [],
@@ -31,7 +31,7 @@
             "detail": "Custom task to build C/C++ project with optimization flags."
         },
         {
-            "label": "GNU make: Clean active project",
+            "label": "GNU make: Clean project",
             "type": "shell",
             "command": "make",
             "args": [
