@@ -1,5 +1,12 @@
 {
 	"settings": {
+		"C_Cpp.files.exclude": {
+			"**/.vscode-workspace": true,
+			"**/.vscode": true,
+			"**/.git": true,
+			"**/build": true,
+			"**/bin": true
+		},
 		"workbench.editor.labelFormat": "medium",
 		"files.associations": {
 			"main.h": "c",
