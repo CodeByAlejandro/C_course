@@ -9,8 +9,7 @@
 		},
 		"workbench.editor.labelFormat": "medium",
 		"files.associations": {
-			"main.h": "c",
-			"stdlib.h": "c"
+			"*.h": "c",
 		}
 	},
 	"tasks": {
