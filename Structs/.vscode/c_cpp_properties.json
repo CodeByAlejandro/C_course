@@ -9,7 +9,13 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c99",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/src",
+                    "${workspaceFolder}/include"
+                ]
+            }
         }
     ],
     "version": 4
