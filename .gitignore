@@ -1,7 +1,7 @@
+# .vscode-workspace/.gitignore symlinks to C_course/.gitignore
+# prevent recursion
+.vscode-workspace/.gitignore
+
 # Project build files
 bin/
 build/
-
-# VS Code launch symlinks
-.vscode/launch_project
-.vscode/launch_binary

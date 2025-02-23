@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "GNU make: Build active project (debug mode)",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "DEBUG=1"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Custom task to build C/C++ project with debug flags."
+        },
+        {
+            "label": "GNU make: Build active project (optimization mode)",
+            "type": "shell",
+            "command": "make",
+            "args": [],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "detail": "Custom task to build C/C++ project with optimization flags."
+        },
+        {
+            "label": "GNU make: Clean active project",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": [],
+            "detail": "Custom task to clean C/C++ project."
+        }
+    ]
+}

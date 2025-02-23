@@ -40,9 +40,9 @@ CPPFLAGS := $(INC_FLAGS) -MMD -MP
 CFLAGS := -std=c99 -Wall -fdiagnostics-color=always
 # Allow passing DEBUG=1 on the command line to compile with debug flags
 ifdef DEBUG
-	CFLAGS += -g -Og
+	CFLAGS += -g -O0
 else
-	CFLAGS += -O2
+	CFLAGS += -O3
 endif
 # Set C++ flags to same as C flags
 CXXFLAGS := $(CFLAGS)

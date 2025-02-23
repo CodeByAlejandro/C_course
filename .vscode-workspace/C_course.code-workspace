@@ -1,0 +1,339 @@
+{
+	"settings": {
+		"workbench.editor.labelFormat": "medium",
+		"files.associations": {
+			"main.h": "c",
+			"stdlib.h": "c"
+		}
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "GNU make: Build all projects (debug mode)",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"DEBUG=1"
+				],
+				"problemMatcher": [
+					"$gcc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build",
+				"detail": "Custom task to build all C/C++ projects with debug flags."
+			},
+			{
+				"label": "GNU make: Build all projects (optimization mode)",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../"
+				],
+				"problemMatcher": [
+					"$gcc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build",
+				"detail": "Custom task to build all C/C++ projects with optimization flags."
+			},
+			{
+				"label": "GNU make: Clean all projects",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"clean"
+				],
+				"problemMatcher": [],
+				"presentation": {
+					"reveal": "always"
+				},
+				"detail": "Custom task to clean all C/C++ projects."
+			},
+			{
+				"label": "GNU make: Update VS Code config files in all projects",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"update_vscode_config"
+				],
+				"problemMatcher": [],
+				"presentation": {
+					"reveal": "always"
+				},
+				"detail": "Custom task to update VS Code config files in all projects."
+			},
+			{
+				"label": "GNU make: Update Makefile in all projects",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"update_makefile"
+				],
+				"problemMatcher": [],
+				"presentation": {
+					"reveal": "always"
+				},
+				"detail": "Custom task to update Makefile in all projects."
+			},
+			{
+				"label": "GNU make: Update VS Code config files in all projects",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"update_vscode_config"
+				],
+				"problemMatcher": [],
+				"presentation": {
+					"reveal": "always"
+				},
+				"detail": "Custom task to update VS Code config files in all projects."
+			},
+			{
+				"label": "GNU make: Create new project",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"create",
+					"PRJ=${input:newProject}"
+				],
+				"problemMatcher": [],
+				"presentation": {
+					"reveal": "always"
+				},
+				"detail": "Custom task to create a new project."
+			},
+			{
+				"label": "GNU make: Delete existing project",
+				"type": "shell",
+				"command": "make",
+				"args": [
+					"-C",
+					"${workspaceFolder}/../",
+					"delete",
+					"PRJ=${input:existingProject}"
+				],
+				"problemMatcher": [],
+				"presentation": {
+					"reveal": "always"
+				},
+				"detail": "Custom task to delete an existing project."
+			}
+		],
+		"inputs": [
+			{
+				"id": "newProject",
+				"type": "promptString",
+				"description": "Choose your project name (no spaces allowed)"
+			},
+			{
+				"id": "existingProject",
+				"type": "promptString",
+				"description": "Choose project to delete"
+			}
+		]
+	},
+	"folders": [
+		{
+			"name": ".vscode-workspace",
+			"path": "./"
+		},
+		{
+			"name": "Alignement",
+			"path": "../Alignement"
+		},
+		{
+			"name": "Arrays",
+			"path": "../Arrays"
+		},
+		{
+			"name": "Binary Vs Int",
+			"path": "../BinaryVsInt"
+		},
+		{
+			"name": "Bit Fields Vs Binary Operators",
+			"path": "../BitFieldsVsBinaryOperators"
+		},
+		{
+			"name": "Bitwise Operators",
+			"path": "../BitwiseOperators"
+		},
+		{
+			"name": "Calc Str Len",
+			"path": "../CalcStrLen"
+		},
+		{
+			"name": "Calculate Primes",
+			"path": "../CalculatePrimes"
+		},
+		{
+			"name": "Challenge 1",
+			"path": "../Challenge1"
+		},
+		{
+			"name": "Complex Numbers",
+			"path": "../ComplexNumbers"
+		},
+		{
+			"name": "Conv Char To Binary",
+			"path": "../ConvCharToBinary"
+		},
+		{
+			"name": "Convert Case",
+			"path": "../ConvertCase"
+		},
+		{
+			"name": "Count File Lines",
+			"path": "../CountFileLines"
+		},
+		{
+			"name": "Data Type_ Sizes",
+			"path": "../DataType_Sizes"
+		},
+		{
+			"name": "Dynamic Memory",
+			"path": "../DynamicMemory"
+		},
+		{
+			"name": "File To Upper Case",
+			"path": "../FileToUpperCase"
+		},
+		{
+			"name": "Flexible Array Members",
+			"path": "../FlexibleArrayMembers"
+		},
+		{
+			"name": "Goto",
+			"path": "../Goto"
+		},
+		{
+			"name": "Header Files",
+			"path": "../HeaderFiles"
+		},
+		{
+			"name": "Inline And No Return Functions",
+			"path": "../InlineAndNoReturnFunctions"
+		},
+		{
+			"name": "Macros",
+			"path": "../Macros"
+		},
+		{
+			"name": "Math Functions",
+			"path": "../MathFunctions"
+		},
+		{
+			"name": "Minutes Conversion",
+			"path": "../MinutesConversion"
+		},
+		{
+			"name": "Number Guessing Game",
+			"path": "../NumberGuessingGame"
+		},
+		{
+			"name": "Pass By Reference",
+			"path": "../PassByReference"
+		},
+		{
+			"name": "Pointer Basics",
+			"path": "../PointerBasics"
+		},
+		{
+			"name": "Print File In Reverse Order",
+			"path": "../PrintFileInReverseOrder"
+		},
+		{
+			"name": "Read Numbers From File",
+			"path": "../ReadNumbersFromFile"
+		},
+		{
+			"name": "Rectangle",
+			"path": "../Rectangle"
+		},
+		{
+			"name": "Recursion",
+			"path": "../Recursion"
+		},
+		{
+			"name": "Search Lines With Char In File",
+			"path": "../SearchLinesWithCharInFile"
+		},
+		{
+			"name": "Setjmp And Longjmp",
+			"path": "../SetjmpAndLongjmp"
+		},
+		{
+			"name": "Setting And Reading Bits",
+			"path": "../SettingAndReadingBits"
+		},
+		{
+			"name": "Storage Classes",
+			"path": "../StorageClasses"
+		},
+		{
+			"name": "Storage Classes 2",
+			"path": "../StorageClasses2"
+		},
+		{
+			"name": "Storage Classes 3",
+			"path": "../StorageClasses3"
+		},
+		{
+			"name": "Strings",
+			"path": "../Strings"
+		},
+		{
+			"name": "Strings 2",
+			"path": "../Strings2"
+		},
+		{
+			"name": "Structs",
+			"path": "../Structs"
+		},
+		{
+			"name": "Structs 2",
+			"path": "../Structs2"
+		},
+		{
+			"name": "Unions",
+			"path": "../Unions"
+		},
+		{
+			"name": "Variable Length Arrays",
+			"path": "../VariableLengthArrays"
+		},
+		{
+			"name": "Variadic Funtions",
+			"path": "../VariadicFuntions"
+		},
+		{
+			"name": "Weather App",
+			"path": "../WeatherApp"
+		},
+		{
+			"name": "Weekly Pay",
+			"path": "../WeeklyPay"
+		},
+		{
+			"name": "Word Count",
+			"path": "../WordCount"
+		}
+	]
+}
