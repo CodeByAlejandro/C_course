@@ -1,4 +1,4 @@
-TARGET_EXEC := mathFunctions
+TARGET_EXEC := MathFunctions
 
 SRC_DIRS := ./src
 INC_DIRS := ./include

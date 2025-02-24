@@ -1,4 +1,4 @@
-TARGET_EXEC := challenge1
+TARGET_EXEC := Challenge1
 
 SRC_DIRS := ./src
 INC_DIRS := ./include

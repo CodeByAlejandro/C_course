@@ -1,4 +1,4 @@
-TARGET_EXEC := printFileInReverseOrder
+TARGET_EXEC := PrintFileInReverseOrder
 
 SRC_DIRS := ./src
 INC_DIRS := ./include

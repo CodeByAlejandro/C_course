@@ -1,4 +1,4 @@
-TARGET_EXEC := convCharToBinary
+TARGET_EXEC := ConvCharToBinary
 
 SRC_DIRS := ./src
 INC_DIRS := ./include

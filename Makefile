@@ -10,7 +10,7 @@ TEMPLATE_MAIN_C := ./.templates/template-main.c
 TEMPLATE_VSCODE_CONFIG := ./.templates/template-vscode/*
 
 # Get list of all project directories in this workspace directory
-PROJECTS := $(shell find . -mindepth 2 -maxdepth 2 -type f -name Makefile | xargs dirname)
+PROJECTS := $(shell find . -mindepth 2 -maxdepth 2 -type f -name Makefile -printf "%P\n" | xargs dirname)
 
 # Remove optional forward slash at the end of the PRJ command line variable
 override PRJ := $(PRJ:%/=%)

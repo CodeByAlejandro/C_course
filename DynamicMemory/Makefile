@@ -1,4 +1,4 @@
-TARGET_EXEC := dynamicMemory
+TARGET_EXEC := DynamicMemory
 
 SRC_DIRS := ./src
 INC_DIRS := ./include

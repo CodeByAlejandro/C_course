@@ -1,4 +1,4 @@
-TARGET_EXEC := fileToUpperCase
+TARGET_EXEC := FileToUpperCase
 
 SRC_DIRS := ./src
 INC_DIRS := ./include
