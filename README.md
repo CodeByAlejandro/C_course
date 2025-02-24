@@ -42,9 +42,7 @@ The following instructions work for `mingw-w64`:
    > **Note:** Change the name of the target executable to your project's name.
 
 ### Verify with `file`-command
-To check the output binary format you can use the `file`-command (e.g. `file ./build/Windows.exe`).
-
-Example Output:
+To check the output binary format you can use the `file`-command:
 ```
 alejo@c-course:~/C_course/Challenge1$ file ./build/Challenge1
 ./build/Challenge1: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=2ce76b9678da756c677cf261686a243db410dacd, for GNU/Linux 3.2.0, with debug_info, not stripped
