@@ -96,21 +96,6 @@
 				"detail": "Custom task to update Makefile in all projects."
 			},
 			{
-				"label": "GNU make: Update VS Code config files in all projects",
-				"type": "shell",
-				"command": "make",
-				"args": [
-					"-C",
-					"${workspaceFolder}/../",
-					"update_vscode_config"
-				],
-				"problemMatcher": [],
-				"presentation": {
-					"reveal": "always"
-				},
-				"detail": "Custom task to update VS Code config files in all projects."
-			},
-			{
 				"label": "GNU make: Create new project",
 				"type": "shell",
 				"command": "make",
