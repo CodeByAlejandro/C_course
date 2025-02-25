@@ -9,6 +9,20 @@ Repository with all projects from the C course from Jason Fedin
 > [!IMPORTANT]
 > This repository uses `GNU make` as build tool and `GNU gcc` as compiler. It's to be used on a `GNU/Linux` machine. On Windows it's recommended to use `WSL` (version 2).
 
+## Table of contents
+- [Repository setup](#repository-setup)
+- [Project setup](#project-setup)
+- [Visual Studio Code workspace setup](#visual-studio-code-workspace-setup)
+   - [Project configuration](#project-configuration)
+   - [Workspace configuration](#workspace-configuration)
+- [Building the project with `GNU make`](#building-the-project-with-gnu-make)
+   - [Top-level makefile](#top-level-makefile)
+   - [Project makefiles](#project-makefiles)
+   - [Build output](#build-output)
+   - [`GNU make` output](#gnu-make-output)
+- [Cross-compilation for Windows](#cross-compilation-for-windows)
+   - [Verify binary with `file`-command](#verify-binary-with-file-command)
+
 ## Repository setup
 The repository contains a list of C projects as well as the following files:
 | Directory / File     | Description                                               |
@@ -29,7 +43,7 @@ Each project is setup using 5 directories:
 | `build/`   | Contains build files (compiler output)                               |
 | `bin/`     | Contains a symlink to the final executable in the `build/` directory |
 
-## Visual Studio Code Workspace setup
+## Visual Studio Code workspace setup
 Configuration for development with Visual Studio Code is provided on 2 levels:
 - for each project
 - for the top-level workspace
@@ -70,7 +84,7 @@ The following workspace level tasks are defined:
 | GNU make: Create new project                          | Creates a new project and adds a new workspace folder to the workspace configuration                                                                   |
 | GNU make: Delete existing project                     | Deletes an existing project and removes the workspace folder from the workspace configuration                                                          |
 
-## Building the project wit `GNU make`
+## Building the project with `GNU make`
 The projects are build using `GNU make`. There is a top-level makefile at the level of the workspace, as well as a makefile for each individual project. The Visual Studio Code build tasks mentioned above are all wrappers around make targets.
 
 ### Top-level makefile
