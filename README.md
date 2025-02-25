@@ -32,7 +32,7 @@ Each project is setup using 5 directories:
 ## Visual Studio Code Workspace setup
 Configuration for development with Visual Studio Code is provided on 2 levels:
 - for each project
-- for the top level workspace
+- for the top-level workspace
 
 ### Project configuration
 Each project comes with a `.vscode` directory that sets it up as a VS Code project. This directory includes C/C++ intellisense configuration, build tasks and a launch configuration.
@@ -74,7 +74,32 @@ The following workspace level tasks are defined:
 The projects are build using `GNU make`. There is a top-level makefile at the level of the workspace, as well as a makefile for each individual project. The Visual Studio Code build tasks mentioned above are all wrappers around make targets.
 
 ### Top-level makefile
-TODO
+The top-level makefile supports the following targets:
+| Target               | Arguments                            | Description |
+|----------------------|--------------------------------------|-------------|
+| build (default)      | `PRJ` (optional), `DEBUG` (optional) | Builds the project passed on the cmd line with the `PRJ` variable or all projects in case it is missing. When the `DEBUG` argument is defined the debug flags `-g` and `-O0` will be appended to the generated `gcc` commands, otherwise the optimization flag `-O3` will be appended to the generated `gcc` commands. |
+| clean                | `PRJ` (optional)                     | Cleans the project passed on the cmd line with the `PRJ` variable or all projects in case it is missing. For each selected project the `build/` and `bin/` directories will be removed. |
+| create               | `PRJ` (required)                     | Creates a new projeect with the name passed on the cmd line with the required `PRJ` variable. The default project structure will be created and a default C source file and header file will be created based on the `template-main.c` and `template-main.h` template files. A makefile will automatically be added to the project based on the `template-makefile.mk` template file and the Visual Studio Code project configuration in the `.vscode` directory will automatically be added based on the templates in the `template-vscode` directory. Finally the Visual Studio Code workspace configuration `C_course.code-workspace` will automatically be regenerated to add a workspace folder for the new project. |
+| update_makefile      | `PRJ` (optional)                     | Updates the `Makefile` for the project passed on the cmd line with the `PRJ` variable or all projects in case it is missing. The `Makefile` will be updated based on the `template-makefile.mk` template file. |
+| update_vscode_config | `PRJ` (optional)                     | Updates the Visual Studio Code project configuration `.vscode` files for the project passed on the cmd line with the `PRJ` variable or all projects in case it is missing. The Visual Studio Code project configuration `.vscode` files will be updated based on the `template-vscode` template files. |
+| delete               | `PRJ` (required)                     | Deletes an existing project with the name passed on the cmd line with the required `PRJ` variable. It's directory will be recursively deleted from the repository and the Visual Studio Code workspace configuration `C_course.code-workspace` will automatically be regenerated to remove the corresponding workspace folder for the project. |
+
+#### Examples:
+```shell
+make
+make DEBUG=1
+make PRJ=Arrays
+make PRJ=Arrays DEBUG=1
+make build PRJ=Arrays DEBUG=1
+make clean
+make clean PRJ=Arrays
+make create PRJ=NewProject
+make update_makefile
+make update_makefile PRJ=Arrays
+make update_vscode_config
+make update_vscode_config PRJ=Arrays
+make delete PRJ=Arrays
+```
 
 ### Project makefiles
 TODO
@@ -84,7 +109,7 @@ The Makefiles can be re-used for cross-compiling Windows binaries, using a diffe
 
 The following instructions work for `mingw-w64`:
 
-1. Install `mingw-w64` toolchain on GNU/Linux machine:
+1. Install `mingw-w64` toolchain on the `GNU/Linux` machine:
 
    ```shell
    sudo apt update && sudo apt install mingw-w64
@@ -96,7 +121,7 @@ The following instructions work for `mingw-w64`:
    ```
    > **Note:** Change the name of the target executable to your project's name.
 
-### Verify with `file`-command
+### Verify binary with `file`-command
 To check the output binary format you can use the `file`-command:
 ```
 alejo@c-course:~/C_course/Challenge1$ file ./build/Challenge1
