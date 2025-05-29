@@ -16,11 +16,11 @@ BIN_DIR_EXISTS := $(shell [ -d $(BIN_DIR) ] && echo 1 || echo 0)
 SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c' -or -name '*.s')
 
 # Prepends BUILD_DIR and appends .o to every src file
-# As an example, ./your_dir/hello.cpp turns into ./build/./your_dir/hello.cpp.o
+# As an example, ./src/hello.cpp turns into ./build/./src/hello.cpp.o
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 # String substitution (suffix version without %) to define compiler generated dependency Makefiles
-# As an example, ./build/hello.cpp.o turns into ./build/hello.cpp.d
+# As an example, ./build/./src/hello.cpp.o turns into ./build/./src/hello.cpp.d
 DEPS := $(OBJS:.o=.d)
 
 # Every folder in INC_DIRS (recursive) will need to be passed to GCC so that it can find header files
@@ -30,8 +30,8 @@ INC_FLAGS := $(addprefix -I,$(ALL_INC_DIRS))
 
 # The -MMD and -MP flags together will make the compiler generate Makefiles as a side-effect for us!
 # Those Makefiles will contain direct and indirect non-system header files a source file depends on.
-# The -MP flag adds dummy rules to avoid errors for when an indirect header file is removed and the source file(s) did not change.
-# (since the .d file(s) will not be regenerated in such case)
+# The -MP flag adds dummy rules to avoid errors for when direct or indirect non-system header files are removed.
+# (since the generated dependency Makefile(s) will still contain them on the subsequent build)
 # These files will have .d instead of .o as the output.
 # CPP stands for C PreProcessor, whereas CXX stands for C++.
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
