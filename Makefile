@@ -44,7 +44,7 @@ endef
 # This template will be reused for each project when no project is defined on the command line (PRJ variable)
 # Note the newline at the end of the block is necessary because the '$(foreach ...)'-function only uses space separators
 define UPDATE_MAKEFILE_TEMPLATE
-cp ./.templates/template-makefile.mk ./$(PROJECT)/Makefile
+cp $(TEMPLATE_MF) ./$(PROJECT)/Makefile
 sed -i 's/%final_program%/$(PROJECT)/g' ./$(PROJECT)/Makefile
 @echo
 
@@ -55,7 +55,7 @@ endef
 # Note the newline at the end of the block is necessary because the '$(foreach ...)'-function only uses space separators
 define UPDATE_VSCODE_CONFIG_TEMPLATE
 mkdir -p ./$(PROJECT)/.vscode
-cp -r ./.templates/template-vscode/* ./$(PROJECT)/.vscode
+cp -r $(TEMPLATE_VSCODE_CONFIG) ./$(PROJECT)/.vscode
 @echo
 
 endef
