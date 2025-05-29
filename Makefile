@@ -118,7 +118,7 @@ endif
 
 # Specifies rule for 'update_vscode_config' target to update the VS Code configuration files in a project
 # Pass PRJ=SomeProject on the command line to set the project to update the VS Code configuration files for
-# The current version of the template directory will be used for updating the Makefile
+# The current version of the template directory will be used for updating the VS Code configuration files
 .PHONY: update_vscode_config
 update_vscode_config:
 ifdef PRJ
