@@ -203,6 +203,10 @@
 			"path": "../DynamicMemory"
 		},
 		{
+			"name": "Enums",
+			"path": "../Enums"
+		},
+		{
 			"name": "File To Upper Case",
 			"path": "../FileToUpperCase"
 		},
