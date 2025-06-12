@@ -239,6 +239,10 @@
 			"path": "../MinutesConversion"
 		},
 		{
+			"name": "Minutes Conversion 2",
+			"path": "../MinutesConversion2"
+		},
+		{
 			"name": "Number Guessing Game",
 			"path": "../NumberGuessingGame"
 		},
