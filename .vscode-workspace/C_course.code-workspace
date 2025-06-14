@@ -247,6 +247,10 @@
 			"path": "../NumberGuessingGame"
 		},
 		{
+			"name": "Number Guessing Game 2",
+			"path": "../NumberGuessingGame2"
+		},
+		{
 			"name": "Pass By Reference",
 			"path": "../PassByReference"
 		},
