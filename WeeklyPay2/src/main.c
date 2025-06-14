@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+#define PAYRATE 12.00f
+#define TAX_LEVEL_1 .15
+#define TAX_LEVEL_2 .20
+#define TAX_LEVEL_3 .25
+
 int main(int argc, char **argv) {
 	float hoursWorked = 0;
 	float grossPay = 0;
@@ -11,20 +16,20 @@ int main(int argc, char **argv) {
 	
 
 	if (hoursWorked > 0 && hoursWorked <= 40) {
-		grossPay = hoursWorked * 12.00f;
+		grossPay = hoursWorked * PAYRATE;
 	} else if (hoursWorked > 40) {
-		grossPay = 40 * 12.00f + (hoursWorked - 40) * 12.00f * 1.5;
+		grossPay = 40 * PAYRATE + (hoursWorked - 40) * PAYRATE * 1.5;
 	}
 	
-	taxes += (grossPay > 300 ? 300 : grossPay) * 0.15;
+	taxes += (grossPay > 300 ? 300 : grossPay) * TAX_LEVEL_1;
 
 	if (grossPay > 300) {
 		double grossPayAbove300 = grossPay - 300;
-		taxes += (grossPayAbove300 > 150 ? 150 : grossPayAbove300) * 0.20;
+		taxes += (grossPayAbove300 > 150 ? 150 : grossPayAbove300) * TAX_LEVEL_2;
 	}
 
 	if (grossPay > 450) {
-		taxes += (grossPay - 450) * 0.25;
+		taxes += (grossPay - 450) * TAX_LEVEL_3;
 	}
 	
 	netPay = grossPay - taxes;
