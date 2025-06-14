@@ -331,6 +331,10 @@
 			"path": "../WeeklyPay"
 		},
 		{
+			"name": "Weekly Pay 2",
+			"path": "../WeeklyPay2"
+		},
+		{
 			"name": "Word Count",
 			"path": "../WordCount"
 		}
