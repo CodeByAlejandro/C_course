@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
 	}
 	
 	if (guessed == false) {
-		printf("\nToo bad, you will never guess my number!\n");		
+		printf("\nToo bad, you will never guess my number!\n");
 	}
 	
 	printf("\n");
