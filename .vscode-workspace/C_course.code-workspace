@@ -179,6 +179,10 @@
 			"path": "../CalculatePrimes2"
 		},
 		{
+			"name": "Calculate Primes 3",
+			"path": "../CalculatePrimes3"
+		},
+		{
 			"name": "Challenge 1",
 			"path": "../Challenge1"
 		},
