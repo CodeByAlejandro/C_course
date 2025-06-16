@@ -331,6 +331,10 @@
 			"path": "../VariableLengthArrays"
 		},
 		{
+			"name": "Variable Length Arrays 2",
+			"path": "../VariableLengthArrays2"
+		},
+		{
 			"name": "Variadic Funtions",
 			"path": "../VariadicFuntions"
 		},
