@@ -243,6 +243,10 @@
 			"path": "../MathFunctions"
 		},
 		{
+			"name": "Math Functions 2",
+			"path": "../MathFunctions2"
+		},
+		{
 			"name": "Minutes Conversion",
 			"path": "../MinutesConversion"
 		},
