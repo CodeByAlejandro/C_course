@@ -27,9 +27,8 @@ unsigned int gcd(unsigned int nbr1, unsigned int nbr2) {
 
 float absl(float nbr) {
 	if (nbr < 0)
-		return -nbr;
-	else
-		return nbr;
+		nbr = -nbr;
+	return nbr;
 }
 
 double sqrt(double nbr) {
