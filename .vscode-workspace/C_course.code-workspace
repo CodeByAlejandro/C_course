@@ -339,6 +339,10 @@
 			"path": "../WeatherApp"
 		},
 		{
+			"name": "Weather App 2",
+			"path": "../WeatherApp2"
+		},
+		{
 			"name": "Weekly Pay",
 			"path": "../WeeklyPay"
 		},
