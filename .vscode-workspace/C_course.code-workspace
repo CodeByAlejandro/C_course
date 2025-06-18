@@ -187,6 +187,10 @@
 			"path": "../Challenge1"
 		},
 		{
+			"name": "Character Arrays",
+			"path": "../CharacterArrays"
+		},
+		{
 			"name": "Complex Numbers",
 			"path": "../ComplexNumbers"
 		},
