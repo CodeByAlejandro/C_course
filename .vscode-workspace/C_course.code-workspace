@@ -315,6 +315,10 @@
 			"path": "../StorageClasses3"
 		},
 		{
+			"name": "String Functions",
+			"path": "../StringFunctions"
+		},
+		{
 			"name": "Strings",
 			"path": "../Strings"
 		},
