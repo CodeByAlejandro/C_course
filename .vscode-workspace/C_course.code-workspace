@@ -171,6 +171,10 @@
 			"path": "../CalcStrLen"
 		},
 		{
+			"name": "Calc Str Len 2",
+			"path": "../CalcStrLen2"
+		},
+		{
 			"name": "Calculate Primes",
 			"path": "../CalculatePrimes"
 		},
