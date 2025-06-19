@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int strLength(const char * string);
+int strLength(const char * pString);
 
 int main(int argc, char **argv) {
 	char str1[] = "Alejandro";
