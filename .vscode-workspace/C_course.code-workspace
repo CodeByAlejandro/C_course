@@ -219,6 +219,10 @@
 			"path": "../DynamicMemory"
 		},
 		{
+			"name": "Dynamic Memory 2",
+			"path": "../DynamicMemory2"
+		},
+		{
 			"name": "Enums",
 			"path": "../Enums"
 		},
