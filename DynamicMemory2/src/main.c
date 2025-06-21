@@ -3,15 +3,21 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <setjmp.h>
+
+jmp_buf buf;
 
 // For timing call the program as ./DynamicMemory2 <<< 'Some string goes here'
 // Otherwise the user input time will be counted as well
-long timeFunction(char * (*promptString)(unsigned int), unsigned int blockSize, char ** pStringRetVal);
-char * promptString(unsigned int blockSize);
+long timeFunction(char * (*readString)(const char *, unsigned int), const char * promptString, unsigned int blockSize, char ** pStringRetVal);
+char * readString(const char * readString, unsigned int blockSize);
 
 int main(int argc, char **argv) {
+	if(setjmp(buf))
+		return 1;
+
 	char * stringRetVal = NULL;
-	long elapsed_ns = timeFunction(promptString, 1, &stringRetVal);
+	long elapsed_ns = timeFunction(readString, "Enter a string of random lenght: ", 1, &stringRetVal);
 
 	printf("\nThe string entered is:\n");
 	printf("\"%s\"\n", stringRetVal);
@@ -26,14 +32,14 @@ int main(int argc, char **argv) {
 	return 0;
 }
 
-long timeFunction(char * (*promptString)(unsigned int), unsigned int blockSize, char ** pStringRetVal) {
+long timeFunction(char * (*readString)(const char *, unsigned int), const char * promptString, unsigned int blockSize, char ** pStringRetVal) {
 	struct timespec start, end;
 	
 	// Get start time
 	clock_gettime(CLOCK_MONOTONIC, &start);
 
 	// run function via func pointer
-	char * pString = promptString(blockSize);
+	char * pString = readString(promptString, blockSize);
 
 	// Get end time
 	clock_gettime(CLOCK_MONOTONIC, &end);
@@ -49,27 +55,31 @@ long timeFunction(char * (*promptString)(unsigned int), unsigned int blockSize, 
 	return elapsed_ns;
 }
 
-char * promptString(unsigned int blockSize) {
-	printf("Enter a string of random lenght: ");
+char * readString(const char * promptString, unsigned int blockSize) {
+	printf("%s", promptString);
 
 	char * pString = (char *) malloc(blockSize * sizeof(char));
-	
 	if (!pString) {
-		fprintf(stderr, "Could not allocate string memory!");
+		fprintf(stderr, "Could not allocate memory for iten name string!\n");
+		longjmp(buf, 1);
 	}
 
-	int count = 0;
+	int idx = 0;
 	int blocks = 1;
-	while ((pString[count] = (char) getchar()) != '\n' && pString[count] != EOF) {
-		if (count == (blocks * blockSize) - 1) {
-			pString = realloc(pString, (++blocks * blockSize) * sizeof(char));
-			if(!pString) {
-				fprintf(stderr, "Could not reallocate string memory!");
-			};
+	while((pString[idx] = getchar()) != '\n' && pString[idx] != EOF) {
+		if (idx == (blocks * blockSize) - 1) {
+			char * const pNewString = realloc(pString, (++blocks * blockSize) * sizeof(char));
+			if (!pNewString) {
+				fprintf(stderr, "Could not reallocate memory for iten name string!\n");
+				free(pString);
+				longjmp(buf, 1);
+			} else {
+				pString = pNewString;
+			}
 		}
-		count++;
+		idx++;
 	}
-	pString[count] = '\0';
+	pString[idx] = '\0';
 	
 	return pString;
 }
