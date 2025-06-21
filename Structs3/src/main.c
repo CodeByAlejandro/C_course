@@ -14,13 +14,10 @@ int main(int argc, char **argv) {
 	printf("Enter employee data:\n");
 
 	printf("\tname: ");
-	fgets(employee2.name, sizeof(employee2.name), stdin);
-	if (ferror(stdin)) {
+	if(!fgets(employee2.name, sizeof(employee2.name), stdin)) {
 		fprintf(stderr, "Failed to get employee name input!\n");
 		return 1;
 	}
-	// Allow EOF (CTRL + D, CTRL + D) to be valid input ending char (instead of newline)
-	clearerr(stdin);
 
 	// Remove ending newline from name
 	char * pChar = employee2.name;
@@ -30,12 +27,8 @@ int main(int argc, char **argv) {
 	
 	printf("\thireDate: ");
 	scanf("%d", &employee2.hireDate);
-	// Allow EOF (CTRL + D, CTRL + D) to be valid input ending char (instead of newline)
-	clearerr(stdin);
 	printf("\tsalary: ");
 	scanf("%f", &employee2.salary);
-	// Allow EOF (CTRL + D, CTRL + D) to be valid input ending char (instead of newline)
-	clearerr(stdin);
 	
 	printf("\n");
 	
