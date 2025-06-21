@@ -343,6 +343,10 @@
 			"path": "../Structs2"
 		},
 		{
+			"name": "Structs 3",
+			"path": "../Structs3"
+		},
+		{
 			"name": "Unions",
 			"path": "../Unions"
 		},
