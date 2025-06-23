@@ -15,12 +15,18 @@ int main(int argc, char **argv) {
 		exit(1);
 	}
 
-	fseek(pFile, 0, SEEK_END);
+	if(fseek(pFile, 0, SEEK_END)) {
+		fprintf(stderr, "Failed to seek in %s!\n", FILENAME);
+		exit(4);
+	}
 	long fpos = ftell(pFile);
 	fpos--;
 	
 	for(; fpos >= 0; fpos--) {
-		fseek(pFile, fpos, SEEK_SET);
+		if(fseek(pFile, fpos, SEEK_SET)) {
+			fprintf(stderr, "Failed to seek in %s!\n", FILENAME);
+			exit(4);
+		}
 		printf("%c", fgetc(pFile));
 		if(ferror(pFile)) {
 			fprintf(stderr, "Failed to read from %s!\n", FILENAME);
