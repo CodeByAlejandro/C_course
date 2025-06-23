@@ -211,6 +211,10 @@
 			"path": "../CountFileLines"
 		},
 		{
+			"name": "Count File Lines 2",
+			"path": "../CountFileLines2"
+		},
+		{
 			"name": "Data Type_ Sizes",
 			"path": "../DataType_Sizes"
 		},
