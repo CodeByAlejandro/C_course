@@ -207,6 +207,10 @@
 			"path": "../ConvertCase"
 		},
 		{
+			"name": "Convert Case 2",
+			"path": "../ConvertCase2"
+		},
+		{
 			"name": "Count File Lines",
 			"path": "../CountFileLines"
 		},
