@@ -1,40 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <complex.h>
-#include <math.h>
+#ifndef _STDC_NO_COMPLEX
+	#include <complex.h>
+	#include <math.h>
+#endif
 
-void VLAs(void);
+#ifndef _STDC_NO_VLA_
+	void VLAs(void);
+#endif
 void flexibleArrayMembers(void);
-void complexNumbers(void);
+#ifndef _STDC_NO_COMPLEX
+	void complexNumbers(void);
+#endif
 
 int main(int argc, char **argv) {
-	VLAs();
+	#ifndef _STDC_NO_VLA_
+		VLAs();
+	#endif
 	flexibleArrayMembers();
-	complexNumbers();
+	#ifndef _STDC_NO_COMPLEX
+		complexNumbers();
+	#endif
 
 	return 0;
 }
 
-void VLAs(void) {
-	int count = 0;
-	int sum = 0;
-	
-	printf("Enter amount of numbers to add: ");
-	scanf("%d", &count);
-	
-	int numbers[count];
-	
-	for(int i = 0; i < count; i++) {
-		printf("Enter number %d > ", i + 1);
-		scanf("%d", &numbers[i]);
+#ifndef _STDC_NO_VLA_
+	void VLAs(void) {
+		int count = 0;
+		int sum = 0;
+		
+		printf("Enter amount of numbers to add: ");
+		scanf("%d", &count);
+		
+		int numbers[count];
+		
+		for(int i = 0; i < count; i++) {
+			printf("Enter number %d > ", i + 1);
+			scanf("%d", &numbers[i]);
+		}
+		
+		for(int i = 0; i < count; i++) {
+			sum += numbers[i];
+		}
+		
+		printf("The sum of the numers is %d\n\n", sum);
 	}
-	
-	for(int i = 0; i < count; i++) {
-		sum += numbers[i];
-	}
-	
-	printf("The sum of the numers is %d\n", sum);
-}
+#endif
 
 void flexibleArrayMembers(void) {
 	struct myArray {
@@ -56,34 +68,36 @@ void flexibleArrayMembers(void) {
 		scanf("%d", &(pMyArray->array[i]));
 	}
 	
-	printf("\nElements in the flexible array member in the struct:\n");
+	printf("Elements in the flexible array member in the struct:\n");
 	
 	for(int i = 0; i < pMyArray->length; i++) {
 		printf("%d ", pMyArray->array[i]);
 	}
 	
-	printf("\n");
+	printf("\n\n");
 	free(pMyArray);
 }
 
-void complexNumbers(void) {
-	double complex z1 = I * I;
-	printf("I * I: %.2f%+.2fi\n", creal(z1), cimag(z1));
-	
-	double complex z2 = pow(I, 2);
-	printf("I ^ 2: %.2f%+.2fi\n", creal(z2), cimag(z2));
-	
-	const double PI = acos(-1);
-	double complex z3 = I * PI;
-	printf("I * PI: %.2f%+.2fi\n", creal(z3), cimag(z3));
+#ifndef _STDC_NO_COMPLEX
+	void complexNumbers(void) {
+		double complex z1 = I * I;
+		printf("I * I: %.2f%+.2fi\n", creal(z1), cimag(z1));
+		
+		double complex z2 = pow(I, 2);
+		printf("I ^ 2: %.2f%+.2fi\n", creal(z2), cimag(z2));
+		
+		const double PI = acos(-1);
+		double complex z3 = I * PI;
+		printf("I * PI: %.2f%+.2fi\n", creal(z3), cimag(z3));
 
-	double complex z4 = 1+2*I;
-	double complex z5 = 1-2*I;
+		double complex z4 = 1+2*I;
+		double complex z5 = 1-2*I;
 
-	double complex z6 = conj(z4);
-	double complex z7 = conj(z5);
-	printf("conj(1+2I): %.2f%+.2fi\n", creal(z6), cimag(z6));
-	printf("conj(1-2I): %.2f%+.2fi\n", creal(z7), cimag(z7));
+		double complex z6 = conj(z4);
+		double complex z7 = conj(z5);
+		printf("conj(1+2I): %.2f%+.2fi\n", creal(z6), cimag(z6));
+		printf("conj(1-2I): %.2f%+.2fi\n", creal(z7), cimag(z7));
 
-	printf("\n");
-}
+		printf("\n");
+	}
+#endif
