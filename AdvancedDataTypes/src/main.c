@@ -12,6 +12,7 @@ void flexibleArrayMembers(void);
 #ifndef _STDC_NO_COMPLEX
 	void complexNumbers(void);
 #endif
+void designatedInitializers(void);
 
 int main(int argc, char **argv) {
 	#ifndef _STDC_NO_VLA_
@@ -21,6 +22,7 @@ int main(int argc, char **argv) {
 	#ifndef _STDC_NO_COMPLEX
 		complexNumbers();
 	#endif
+	designatedInitializers();
 
 	return 0;
 }
@@ -101,3 +103,24 @@ void flexibleArrayMembers(void) {
 		printf("\n");
 	}
 #endif
+
+void designatedInitializers(void) {
+	int arr[15] = { [0 ... 9] = 5, [10] = 6, 7 };
+	for(int i = 0; i < 15; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+
+	struct test {
+		int x;
+		int y;
+	};
+	
+	struct test array[2] = { [0].x = 5, [0].y = 6 };
+	
+	for(int i = 0; i < 2; i++) {
+		printf("%d %d\n", array[i].x, array[i].y);
+	}
+	
+	printf("\n");
+}
