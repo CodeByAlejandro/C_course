@@ -147,6 +147,10 @@
 			"path": "./"
 		},
 		{
+			"name": "Advanced Data Types",
+			"path": "../AdvancedDataTypes"
+		},
+		{
 			"name": "Alignement",
 			"path": "../Alignement"
 		},
