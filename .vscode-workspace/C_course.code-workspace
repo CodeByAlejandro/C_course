@@ -299,6 +299,10 @@
 			"path": "../PrintFileInReverseOrder2"
 		},
 		{
+			"name": "Read Numbers",
+			"path": "../ReadNumbers"
+		},
+		{
 			"name": "Read Numbers From File",
 			"path": "../ReadNumbersFromFile"
 		},
