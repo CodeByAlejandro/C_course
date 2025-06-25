@@ -15,8 +15,10 @@ int main(int argc, char **argv) {
 		// Read string number from stdin
 		printf("Enter integral number %d > ", count + 1);
 		if(!fgets(inputStr, sizeof(inputStr), stdin)) {
-			fprintf(stderr, "Error reading input!\n");
-			exit(EXIT_FAILURE);
+			if(ferror(stdin)) {
+				fprintf(stderr, "Error reading input!\n");
+				exit(EXIT_FAILURE);
+			}
 		}
 		
 		/* Case insensitive compare to "quit" */
@@ -24,7 +26,7 @@ int main(int argc, char **argv) {
 		for(pInputChar = inputStr; (*pInputChar = (char) tolower(*pInputChar)); pInputChar++);
 		// Remove ending newline from input string
 		if(*--pInputChar == '\n') {
-			*pInputChar = '\0';		
+			*pInputChar = '\0';
 		}
 		if(strcmp(inputStr, "quit") == 0) {
 			break;			
