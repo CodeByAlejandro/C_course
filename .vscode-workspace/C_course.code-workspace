@@ -159,6 +159,10 @@
 			"path": "../Arrays"
 		},
 		{
+			"name": "Binary Numbers",
+			"path": "../BinaryNumbers"
+		},
+		{
 			"name": "Binary Vs Int",
 			"path": "../BinaryVsInt"
 		},
