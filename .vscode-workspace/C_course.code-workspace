@@ -175,6 +175,10 @@
 			"path": "../BitwiseOperators"
 		},
 		{
+			"name": "Bitwise Operators 2",
+			"path": "../BitwiseOperators2"
+		},
+		{
 			"name": "Calc Str Len",
 			"path": "../CalcStrLen"
 		},
