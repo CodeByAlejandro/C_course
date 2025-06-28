@@ -171,6 +171,10 @@
 			"path": "../BitFieldsVsBinaryOperators"
 		},
 		{
+			"name": "Bit Fields Vs Binary Operators 2",
+			"path": "../BitFieldsVsBinaryOperators2"
+		},
+		{
 			"name": "Bitwise Operators",
 			"path": "../BitwiseOperators"
 		},
