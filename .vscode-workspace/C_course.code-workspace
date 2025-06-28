@@ -263,6 +263,10 @@
 			"path": "../Goto"
 		},
 		{
+			"name": "Goto 2",
+			"path": "../Goto2"
+		},
+		{
 			"name": "Header Files",
 			"path": "../HeaderFiles"
 		},
