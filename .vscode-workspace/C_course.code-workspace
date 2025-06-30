@@ -207,6 +207,10 @@
 			"path": "../Challenge1"
 		},
 		{
+			"name": "Char Functions",
+			"path": "../CharFunctions"
+		},
+		{
 			"name": "Character Arrays",
 			"path": "../CharacterArrays"
 		},
