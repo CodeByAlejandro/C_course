@@ -363,6 +363,10 @@
 			"path": "../Structs4"
 		},
 		{
+			"name": "Trim Functions",
+			"path": "../TrimFunctions"
+		},
+		{
 			"name": "Unions",
 			"path": "../Unions"
 		},
