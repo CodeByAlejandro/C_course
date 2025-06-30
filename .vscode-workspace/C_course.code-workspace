@@ -147,12 +147,20 @@
 			"path": "./"
 		},
 		{
+			"name": "Advanced Data Types",
+			"path": "../AdvancedDataTypes"
+		},
+		{
 			"name": "Alignement",
 			"path": "../Alignement"
 		},
 		{
 			"name": "Arrays",
 			"path": "../Arrays"
+		},
+		{
+			"name": "Binary Numbers",
+			"path": "../BinaryNumbers"
 		},
 		{
 			"name": "Binary Vs Int",
@@ -163,8 +171,16 @@
 			"path": "../BitFieldsVsBinaryOperators"
 		},
 		{
+			"name": "Bit Fields Vs Binary Operators 2",
+			"path": "../BitFieldsVsBinaryOperators2"
+		},
+		{
 			"name": "Bitwise Operators",
 			"path": "../BitwiseOperators"
+		},
+		{
+			"name": "Bitwise Operators 2",
+			"path": "../BitwiseOperators2"
 		},
 		{
 			"name": "Calc Str Len",
@@ -247,6 +263,10 @@
 			"path": "../Goto"
 		},
 		{
+			"name": "Goto 2",
+			"path": "../Goto2"
+		},
+		{
 			"name": "Header Files",
 			"path": "../HeaderFiles"
 		},
@@ -297,6 +317,10 @@
 		{
 			"name": "Print File In Reverse Order 2",
 			"path": "../PrintFileInReverseOrder2"
+		},
+		{
+			"name": "Read Numbers",
+			"path": "../ReadNumbers"
 		},
 		{
 			"name": "Read Numbers From File",
