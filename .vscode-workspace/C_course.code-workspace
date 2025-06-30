@@ -211,6 +211,10 @@
 			"path": "../CharFunctions"
 		},
 		{
+			"name": "Char Functions 2",
+			"path": "../CharFunctions2"
+		},
+		{
 			"name": "Character Arrays",
 			"path": "../CharacterArrays"
 		},
