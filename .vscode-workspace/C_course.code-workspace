@@ -267,6 +267,10 @@
 			"path": "../FlexibleArrayMembers"
 		},
 		{
+			"name": "Formatting Functions",
+			"path": "../FormattingFunctions"
+		},
+		{
 			"name": "Goto",
 			"path": "../Goto"
 		},
