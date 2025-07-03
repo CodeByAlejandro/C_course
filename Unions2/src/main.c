@@ -8,7 +8,7 @@ union student {
 };
 
 int main(int argc, char **argv) {
-	union student s1, *s2;
+	union student s1, student2, *s2 = &student2;
 	
 	s1.letterGrade = 'A';
 	s1.roundedGrade = 9;
