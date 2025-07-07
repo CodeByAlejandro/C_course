@@ -7,7 +7,7 @@
 #define SQUARE(x) ((x) * (x))
 #define CUBE(x) (SQUARE(x) * (x))
 #define IS_UPPER(c) isupper(c)
-#define IS_LOWER(c) (c >= 97)
+#define IS_LOWER(c) (c >= 'a' && c <= 'z')
 
 #define PRINT_ERR(...) fprintf(stderr, __VA_ARGS__)
 
