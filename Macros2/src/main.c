@@ -17,6 +17,9 @@ int main(int argc, char **argv) {
 
 	printf("The current function is %s\n", __func__);
 	printf("This is line %d in file %s\n", __LINE__, __FILE__);
+	#line 50 "test.c"
+	printf("This is line %d in file %s\n", __LINE__, __FILE__);
+	printf("This is line %d in file %s\n", __LINE__, __FILE__);
 	printf("This program was compiled on %s at %s\n", __DATE__, __TIME__);
 	#if __STDC__ == 1
 		puts("This compiler supports the ISO C standard.");
