@@ -291,6 +291,10 @@
 			"path": "../Macros"
 		},
 		{
+			"name": "Macros 2",
+			"path": "../Macros2"
+		},
+		{
 			"name": "Math Functions",
 			"path": "../MathFunctions"
 		},
