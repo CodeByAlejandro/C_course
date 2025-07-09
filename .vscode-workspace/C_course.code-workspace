@@ -235,6 +235,10 @@
 			"path": "../ConvertCase2"
 		},
 		{
+			"name": "Core Dump",
+			"path": "../CoreDump"
+		},
+		{
 			"name": "Count File Lines",
 			"path": "../CountFileLines"
 		},
