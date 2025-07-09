@@ -5,3 +5,6 @@
 # Project build files
 bin/
 build/
+
+# Core dump files
+core
