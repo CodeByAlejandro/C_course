@@ -283,6 +283,10 @@
 			"path": "../FormattingFunctions"
 		},
 		{
+			"name": "Function Pointers",
+			"path": "../FunctionPointers"
+		},
+		{
 			"name": "Goto",
 			"path": "../Goto"
 		},
