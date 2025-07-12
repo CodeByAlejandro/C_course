@@ -255,6 +255,10 @@
 			"path": "../Debugging"
 		},
 		{
+			"name": "Double Pointers",
+			"path": "../DoublePointers"
+		},
+		{
 			"name": "Dynamic Memory",
 			"path": "../DynamicMemory"
 		},
