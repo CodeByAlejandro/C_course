@@ -251,6 +251,10 @@
 			"path": "../DataType_Sizes"
 		},
 		{
+			"name": "Debugging",
+			"path": "../Debugging"
+		},
+		{
 			"name": "Dynamic Memory",
 			"path": "../DynamicMemory"
 		},
