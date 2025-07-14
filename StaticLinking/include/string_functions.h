@@ -1,3 +1,6 @@
+#ifndef STRING_FUNCTIONS_H
+#define STRING_FUNCTIONS_H
+
 #include <stddef.h>
 
 /*
@@ -57,3 +60,5 @@ char * strCopy(char * restrict dest, const char * restrict source, size_t n);
  * @return int - 0 on success, non-zero integer on failure
  */
 int substring(char * restrict target, size_t from, size_t n, const char * restrict source);
+
+#endif // STRING_FUNCTIONS_H
