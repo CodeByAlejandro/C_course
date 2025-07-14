@@ -383,6 +383,10 @@
 			"path": "../SettingAndReadingBits"
 		},
 		{
+			"name": "Static Linking",
+			"path": "../StaticLinking"
+		},
+		{
 			"name": "Storage Classes",
 			"path": "../StorageClasses"
 		},
