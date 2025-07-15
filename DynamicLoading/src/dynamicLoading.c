@@ -43,7 +43,7 @@ static void * dynamicLoadFuncs(void) {
 
 	handle = dlopen("./libstring_functions.so", RTLD_LAZY);
 	if(handle == NULL) {
-		fputs(dlerror(), stderr);
+		fprintf(stderr, "%s\n", dlerror());
 		exit(1);
 	}
 	dlerror(); // Clear errors
@@ -68,7 +68,7 @@ static void chkDlsymError(void) {
 	char * error = NULL;
 
 	if((error = dlerror()) != NULL) {
-		fputs(error, stderr);
+		fprintf(stderr, "%s\n", error);
 		exit(1);
 	}
 	dlerror(); // Clear errors
