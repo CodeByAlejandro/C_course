@@ -259,6 +259,10 @@
 			"path": "../DoublePointers"
 		},
 		{
+			"name": "Dynamic Linking",
+			"path": "../DynamicLinking"
+		},
+		{
 			"name": "Dynamic Memory",
 			"path": "../DynamicMemory"
 		},
