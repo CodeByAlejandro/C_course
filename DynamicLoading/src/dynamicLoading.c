@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
 static void * dynamicLoadFuncs(void) {
 	void * handle = NULL;
 
-	handle = dlopen("/home/alejo/C_course/DynamicLoading/src/libstring_functions.so", RTLD_LAZY);
+	handle = dlopen("./libstring_functions.so", RTLD_LAZY);
 	if(handle == NULL) {
 		fputs(dlerror(), stderr);
 		exit(1);
