@@ -1,0 +1,1 @@
+rm -v *.so main 2>/dev/null

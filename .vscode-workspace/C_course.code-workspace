@@ -263,6 +263,10 @@
 			"path": "../DynamicLinking"
 		},
 		{
+			"name": "Dynamic Loading",
+			"path": "../DynamicLoading"
+		},
+		{
 			"name": "Dynamic Memory",
 			"path": "../DynamicMemory"
 		},
