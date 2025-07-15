@@ -81,7 +81,7 @@ void tstStrCopy(void) {
 	char dest2[14] = { '\0' }; // Initialize with null terminator
 	source = "Hello, this is a test.";
 	printf("Before second copy: \"%s\"\n", dest2);
-	strConcat(dest2, source, sizeof(dest2) - lengthOfString(dest2));
+	strCopy(dest2, source, sizeof(dest2) - lengthOfString(dest2));
 	printf("After second copy: \"%s\"\n", dest2);
 }
 
