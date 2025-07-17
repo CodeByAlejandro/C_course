@@ -335,6 +335,10 @@
 			"path": "../MinutesConversion2"
 		},
 		{
+			"name": "Mocking",
+			"path": "../Mocking"
+		},
+		{
 			"name": "Number Guessing Game",
 			"path": "../NumberGuessingGame"
 		},
