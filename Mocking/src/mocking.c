@@ -34,7 +34,6 @@ struct found_mock * get_mock(const void * func) {
     if (mock_list.cache != NULL && mock_list.cache->mock.func == func) {
         return mock_list.cache;
     } else {
-        printf("-> inside mock function\n"); // DEBUG
         if (mock_list.cache == NULL) {
             mock_list.cache = (struct found_mock *) malloc(sizeof(struct found_mock));
         }
@@ -44,6 +43,7 @@ struct found_mock * get_mock(const void * func) {
             if (mock_list.mock_ptr[i].func == func) {
                 mock_list.cache->mock.val = mock_list.mock_ptr[i].val;
                 found_existing_mock = true;
+                printf("-> inside mock function\n"); // DEBUG
                 break;
             }
         }
