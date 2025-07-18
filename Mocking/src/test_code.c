@@ -38,5 +38,8 @@
         set_mock((void *) add, (void *) &mock_add_val);
         set_mock((void *) add_triplet, (void *) &mock_add_triplet_val);
         assert(add_quintet(1, 2, 1, 2, 3) == 9);
+        
+        // Technically a memory leak since no call(s) to either reset_mocks or remove_mock functions
+        // However this is where the tests end.
     }
 #endif
