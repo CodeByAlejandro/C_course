@@ -339,6 +339,10 @@
 			"path": "../Mocking"
 		},
 		{
+			"name": "Mocking 2",
+			"path": "../Mocking2"
+		},
+		{
 			"name": "Number Guessing Game",
 			"path": "../NumberGuessingGame"
 		},
